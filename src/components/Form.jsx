@@ -38,6 +38,8 @@ function Form({
         value={ cardAttr1 }
         onChange={ onInputChange }
         type="number"
+        min="0"
+        max="90"
         data-testid="attr1-input"
         id="attr01"
       />
@@ -46,6 +48,8 @@ function Form({
         value={ cardAttr2 }
         onChange={ onInputChange }
         type="number"
+        min="0"
+        max="90"
         data-testid="attr2-input"
         id="attr02"
       />
@@ -54,6 +58,8 @@ function Form({
         value={ cardAttr3 }
         onChange={ onInputChange }
         type="number"
+        min="0"
+        max="90"
         data-testid="attr3-input"
         id="attr03"
       />
@@ -63,6 +69,7 @@ function Form({
         onChange={ onInputChange }
         type="text"
         data-testid="image-input"
+        id="image"
       />
 
       <select value={ cardRare } onChange={ onInputChange } data-testid="rare-input">
