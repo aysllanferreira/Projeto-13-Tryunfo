@@ -22,6 +22,7 @@ function Form({
         onChange={ onInputChange }
         type="text"
         data-testid="name-input"
+        id="name"
       />
 
       <textarea
@@ -30,6 +31,7 @@ function Form({
         data-testid="description-input"
         cols="30"
         rows="10"
+        id="desc"
       />
 
       <input
@@ -37,6 +39,7 @@ function Form({
         onChange={ onInputChange }
         type="number"
         data-testid="attr1-input"
+        id="attr01"
       />
 
       <input
@@ -44,6 +47,7 @@ function Form({
         onChange={ onInputChange }
         type="number"
         data-testid="attr2-input"
+        id="attr02"
       />
 
       <input
@@ -51,6 +55,7 @@ function Form({
         onChange={ onInputChange }
         type="number"
         data-testid="attr3-input"
+        id="attr03"
       />
 
       <input
