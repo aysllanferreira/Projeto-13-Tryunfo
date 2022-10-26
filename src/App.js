@@ -14,6 +14,9 @@ function App() {
 
   const onInputChange = ({ target }) => {
     const { id, value, checked } = target;
+
+    if (checked) setCardTrunfo(checked);
+    else setCardTrunfo(false);
     switch (id) {
     case 'name':
       setCardName(value);
@@ -36,9 +39,7 @@ function App() {
     case 'raridade':
       setCardRare(value);
       break;
-    case 'trunfo':
-      setCardTrunfo(checked);
-      break;
+
     default:
       break;
     }
