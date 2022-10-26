@@ -5,9 +5,9 @@ import Form from './components/Form';
 function App() {
   const [cardName, setCardName] = useState('');
   const [cardDescription, setCardDescription] = useState('');
-  const [cardAttr1, setCardAttr1] = useState();
-  const [cardAttr2, setCardAttr2] = useState();
-  const [cardAttr3, setCardAttr3] = useState();
+  const [cardAttr1, setCardAttr1] = useState(0);
+  const [cardAttr2, setCardAttr2] = useState(0);
+  const [cardAttr3, setCardAttr3] = useState(0);
   const [cardImage, setCardImage] = useState('');
   const [cardRare, setCardRare] = useState('normal');
   const [cardTrunfo, setCardTrunfo] = useState(false);
@@ -18,7 +18,7 @@ function App() {
     const sum = (+cardAttr1 + +cardAttr2 + +cardAttr3) > maxValue;
     if (cardName !== '' && cardDescription !== ''
     && cardAttr1 !== '' && cardAttr2 !== '' && cardAttr3 !== ''
-    && cardImage !== '' && sum < maxValue) {
+    && cardImage !== '' && sum > maxValue) {
       setTurnBtn(false);
     } else {
       setTurnBtn(true);
@@ -75,7 +75,13 @@ function App() {
   };
 
   const onSaveButtonClick = () => {
-    console.log('Clicou no botão salvar');
+    setCardName('');
+    setCardDescription('');
+    setCardImage('');
+    setCardAttr1(0);
+    setCardAttr2(0);
+    setCardAttr3(0);
+    setCardRare('normal');
   };
 
   return (
