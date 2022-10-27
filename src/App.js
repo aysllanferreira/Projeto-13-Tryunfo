@@ -13,6 +13,9 @@ function App() {
   const [cardTrunfo, setCardTrunfo] = useState(false);
   const [saveCard, setSaveCard] = useState([]);
   const [hasTrunfo, setHasTrunfo] = useState(false);
+  const [nameFilter, setNameFilter] = useState('');
+  const [rareFilter, setRareFilter] = useState('getAll');
+  const [trunfoFilter, setTrunfoFilter] = useState(false);
 
   const verifyTrunfo = () => {
     if (saveCard.length === 0) setHasTrunfo(false);
@@ -86,6 +89,16 @@ function App() {
     setCardRare('normal');
   };
 
+  const getNameByFilter = saveCard.filter(({ name }) => name.toLowerCase()
+    .includes(nameFilter.toLowerCase()));
+
+  const getRareFilter = getNameByFilter
+    .filter(({ rare }) => rare === rareFilter || rareFilter === 'getAll');
+
+  const getTrunfoCards = saveCard.filter(({ trunfo }) => trunfo === true);
+
+  const filters = trunfoFilter ? getTrunfoCards : getRareFilter;
+
   const deleteCard = ({ target }) => {
     const newCards = saveCard.filter(({ name }) => name !== target.value);
     setSaveCard(newCards);
@@ -126,24 +139,46 @@ function App() {
         onInputChange={ onInputChange }
         onSaveButtonClick={ onSaveButtonClick }
       />
+      <input
+        type="text"
+        data-testid="name-filter"
+        value={ nameFilter }
+        disabled={ trunfoFilter }
+        onChange={ ({ target }) => setNameFilter(target.value) }
+      />
+      <select
+        value={ getRareFilter }
+        disabled={ trunfoFilter }
+        onChange={ ({ target }) => setFilterRare(target.value) }
+        data-testid="rare-filter"
+      >
+        <option value="getAll">Todos</option>
+        <option value="normal">Normal</option>
+        <option value="raro">Raro</option>
+        <option value="muito raro">Muito Raro</option>
+      </select>
+
       {saveCard.length > 0 ? (
         <ul>
-          {saveCard.map((card) => (
+          {filters.map(({
+            name, description, attr1, attr2, attr3, image, rare, trunfo,
+          }) => (
             <li key={ Math.random() }>
               <Card
-                cardName={ card.name }
-                cardDescription={ card.description }
-                cardAttr1={ card.attr1 }
-                cardAttr2={ card.attr2 }
-                cardAttr3={ card.attr3 }
-                cardImage={ card.image }
-                cardRare={ card.rare }
-                cardTrunfo={ card.trunfo }
+                cardName={ name }
+                cardDescription={ description }
+                cardAttr1={ attr1 }
+                cardAttr2={ attr2 }
+                cardAttr3={ attr3 }
+                cardImage={ image }
+                cardRare={ rare }
+                cardTrunfo={ trunfo }
               />
+
               <button
                 type="button"
                 data-testid="delete-button"
-                value={ card.name }
+                value={ name }
                 onClick={ deleteCard }
               >
                 Excluir
