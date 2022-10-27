@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import RenderCard from './components/RenderCard';
+import HandleRender from './components/HandleRender';
 import Card from './components/Card';
 import Filter from './components/Filter';
 import Form from './components/Form';
@@ -151,24 +151,10 @@ function App() {
       />
 
       {saveCard.length > 0 ? (
-        <ul>
-          {filters.map(({
-            name, description, attr1, attr2, attr3, image, rare, trunfo,
-          }) => (
-            <RenderCard
-              key={ Math.random() }
-              name={ name }
-              description={ description }
-              attr1={ attr1 }
-              attr2={ attr2 }
-              attr3={ attr3 }
-              image={ image }
-              rare={ rare }
-              trunfo={ trunfo }
-              deleteCard={ deleteCard }
-            />
-          ))}
-        </ul>
+        <HandleRender
+          filters={ filters }
+          deleteCard={ deleteCard }
+        />
       ) : null}
     </div>
   );
