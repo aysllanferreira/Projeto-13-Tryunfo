@@ -78,12 +78,22 @@ function Form({
         <option value="muito raro">muito raro</option>
       </select>
 
-      <input
-        checked={ cardTrunfo }
-        onChange={ onInputChange }
-        type="checkbox"
-        data-testid="trunfo-input"
-      />
+      {
+        hasTrunfo ? (
+          <p>Você já tem um Super Trunfo em seu baralho</p>
+        ) : (
+          <label htmlFor="cardTrunfo">
+            Super Trunfo
+            <input
+              type="checkbox"
+              name="cardTrunfo"
+              data-testid="trunfo-input"
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
+            />
+          </label>
+        )
+      }
 
       <button
         disabled={ isSaveButtonDisabled }
