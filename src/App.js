@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from './components/Card';
+import Filter from './components/Filter';
 import Form from './components/Form';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   const [saveCard, setSaveCard] = useState([]);
   const [hasTrunfo, setHasTrunfo] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
-  const [rareFilter, setRareFilter] = useState('getAll');
+  const [rareFilter, setRareFilter] = useState('todas');
   const [trunfoFilter, setTrunfoFilter] = useState(false);
 
   const verifyTrunfo = () => {
@@ -93,7 +94,7 @@ function App() {
     .includes(nameFilter.toLowerCase()));
 
   const getRareFilter = getNameByFilter
-    .filter(({ rare }) => rare === rareFilter || rareFilter === 'getAll');
+    .filter(({ rare }) => rare === rareFilter || rareFilter === 'todas');
 
   const getTrunfoCards = saveCard.filter(({ trunfo }) => trunfo === true);
 
@@ -139,24 +140,14 @@ function App() {
         onInputChange={ onInputChange }
         onSaveButtonClick={ onSaveButtonClick }
       />
-      <input
-        type="text"
-        data-testid="name-filter"
-        value={ nameFilter }
-        disabled={ trunfoFilter }
-        onChange={ ({ target }) => setNameFilter(target.value) }
+      <Filter
+        trunfoFilter={ trunfoFilter }
+        nameFilter={ nameFilter }
+        setNameFilter={ setNameFilter }
+        rareFilter={ rareFilter }
+        setRareFilter={ setRareFilter }
+        setTrunfoFilter={ setTrunfoFilter }
       />
-      <select
-        value={ getRareFilter }
-        disabled={ trunfoFilter }
-        onChange={ ({ target }) => setFilterRare(target.value) }
-        data-testid="rare-filter"
-      >
-        <option value="getAll">Todos</option>
-        <option value="normal">Normal</option>
-        <option value="raro">Raro</option>
-        <option value="muito raro">Muito Raro</option>
-      </select>
 
       {saveCard.length > 0 ? (
         <ul>

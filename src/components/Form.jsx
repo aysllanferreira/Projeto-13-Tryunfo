@@ -72,7 +72,12 @@ function Form({
         id="image"
       />
 
-      <select value={ cardRare } onChange={ onInputChange } data-testid="rare-input">
+      <select
+        value={ cardRare }
+        onChange={ onInputChange }
+        data-testid="rare-input"
+        id="raridade"
+      >
         <option value="normal">normal</option>
         <option value="raro">raro</option>
         <option value="muito raro">muito raro</option>
@@ -82,7 +87,7 @@ function Form({
         hasTrunfo ? (
           <p>Você já tem um Super Trunfo em seu baralho</p>
         ) : (
-          <label htmlFor="cardTrunfo">
+          <label data-testid="trunfo-filter" htmlFor="cardTrunfo">
             Super Trunfo
             <input
               type="checkbox"
