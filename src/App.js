@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import RenderCard from './components/RenderCard';
 import Card from './components/Card';
 import Filter from './components/Filter';
 import Form from './components/Form';
@@ -154,27 +155,18 @@ function App() {
           {filters.map(({
             name, description, attr1, attr2, attr3, image, rare, trunfo,
           }) => (
-            <li key={ Math.random() }>
-              <Card
-                cardName={ name }
-                cardDescription={ description }
-                cardAttr1={ attr1 }
-                cardAttr2={ attr2 }
-                cardAttr3={ attr3 }
-                cardImage={ image }
-                cardRare={ rare }
-                cardTrunfo={ trunfo }
-              />
-
-              <button
-                type="button"
-                data-testid="delete-button"
-                value={ name }
-                onClick={ deleteCard }
-              >
-                Excluir
-              </button>
-            </li>
+            <RenderCard
+              key={ Math.random() }
+              name={ name }
+              description={ description }
+              attr1={ attr1 }
+              attr2={ attr2 }
+              attr3={ attr3 }
+              image={ image }
+              rare={ rare }
+              trunfo={ trunfo }
+              deleteCard={ deleteCard }
+            />
           ))}
         </ul>
       ) : null}
