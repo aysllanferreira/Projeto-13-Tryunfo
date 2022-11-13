@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../style/Form.scss';
 
 function Form({
   cardName,
@@ -16,7 +17,7 @@ function Form({
   onSaveButtonClick,
 }) {
   return (
-    <form>
+    <form className="Form">
       <input
         value={ cardName }
         onChange={ onInputChange }

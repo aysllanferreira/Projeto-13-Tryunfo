@@ -11,3 +11,15 @@ body{
   background-color: var(--main);
   color: var(--secondary);
 }
+
+.App{
+  .Render{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 200px;
+    align-items: center;
+    align-content: center;
+  }
+}

@@ -113,35 +113,37 @@ function App() {
   }, [saveCard]);
 
   return (
-    <div>
+    <div className="App">
       <h1>Tryunfo</h1>
-      <Form
-        cardName={ cardName }
-        cardDescription={ cardDescription }
-        cardAttr1={ cardAttr1 }
-        cardAttr2={ cardAttr2 }
-        cardAttr3={ cardAttr3 }
-        cardImage={ cardImage }
-        cardRare={ cardRare }
-        cardTrunfo={ cardTrunfo }
-        onInputChange={ onInputChange }
-        onSaveButtonClick={ onSaveButtonClick }
-        isSaveButtonDisabled={ verifySize() }
-        hasTrunfo={ hasTrunfo }
-      />
+      <div className="Render">
+        <Form
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
+          onInputChange={ onInputChange }
+          onSaveButtonClick={ onSaveButtonClick }
+          isSaveButtonDisabled={ verifySize() }
+          hasTrunfo={ hasTrunfo }
+        />
 
-      <Card
-        cardName={ cardName }
-        cardDescription={ cardDescription }
-        cardAttr1={ cardAttr1 }
-        cardAttr2={ cardAttr2 }
-        cardAttr3={ cardAttr3 }
-        cardImage={ cardImage }
-        cardRare={ cardRare }
-        cardTrunfo={ cardTrunfo }
-        onInputChange={ onInputChange }
-        onSaveButtonClick={ onSaveButtonClick }
-      />
+        <Card
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
+          onInputChange={ onInputChange }
+          onSaveButtonClick={ onSaveButtonClick }
+        />
+      </div>
       <Filter
         trunfoFilter={ trunfoFilter }
         nameFilter={ nameFilter }
