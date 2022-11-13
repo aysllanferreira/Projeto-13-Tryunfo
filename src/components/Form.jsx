@@ -18,14 +18,24 @@ function Form({
 }) {
   return (
     <form className="Form">
+      <label htmlFor="name">
+        {' '}
+        Nome:
+      </label>
       <input
         value={ cardName }
         onChange={ onInputChange }
         type="text"
         data-testid="name-input"
         id="name"
+        placeholder="Nome do personagem"
       />
 
+      <label htmlFor="desc">
+        {' '}
+        Descricao:
+
+      </label>
       <textarea
         value={ cardDescription }
         onChange={ onInputChange }
@@ -33,8 +43,13 @@ function Form({
         cols="30"
         rows="10"
         id="desc"
+        placeholder="Descrição do personagem"
       />
 
+      <label htmlFor="attr01">
+        Atributo 01:
+        {' '}
+      </label>
       <input
         value={ cardAttr1 }
         onChange={ onInputChange }
@@ -43,8 +58,14 @@ function Form({
         max="90"
         data-testid="attr1-input"
         id="attr01"
+        placeholder="Atributo 1"
       />
 
+      <label htmlFor="attr02">
+        {' '}
+        Atributo 02:
+
+      </label>
       <input
         value={ cardAttr2 }
         onChange={ onInputChange }
@@ -53,8 +74,15 @@ function Form({
         max="90"
         data-testid="attr2-input"
         id="attr02"
+        placeholder="Atributo 2"
       />
 
+      <label htmlFor="attr03">
+        {' '}
+        Atributo 03:
+        {' '}
+
+      </label>
       <input
         value={ cardAttr3 }
         onChange={ onInputChange }
@@ -63,16 +91,29 @@ function Form({
         max="90"
         data-testid="attr3-input"
         id="attr03"
+        placeholder="Atributo 3"
       />
 
+      <label htmlFor="image">
+        {' '}
+        Imagem:
+
+      </label>
       <input
         value={ cardImage }
         onChange={ onInputChange }
         type="text"
         data-testid="image-input"
         id="image"
+        placeholder="URL da imagem"
       />
 
+      <label htmlFor="raridade">
+        {' '}
+        Raridade:
+        {' '}
+
+      </label>
       <select
         value={ cardRare }
         onChange={ onInputChange }
@@ -88,8 +129,11 @@ function Form({
         hasTrunfo ? (
           <p>Você já tem um Super Trunfo em seu baralho</p>
         ) : (
-          <label data-testid="trunfo-filter" htmlFor="cardTrunfo">
-            Super Trunfo
+          <div>
+            <label data-testid="trunfo-filter" htmlFor="cardTrunfo">
+              {' '}
+              Super Trunfo:
+            </label>
             <input
               type="checkbox"
               name="cardTrunfo"
@@ -97,7 +141,8 @@ function Form({
               checked={ cardTrunfo }
               onChange={ onInputChange }
             />
-          </label>
+
+          </div>
         )
       }
 
@@ -110,6 +155,7 @@ function Form({
         Salvar
 
       </button>
+
     </form>
   );
 }
