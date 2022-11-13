@@ -3,6 +3,7 @@ import HandleRender from './components/HandleRender';
 import Card from './components/Card';
 import Filter from './components/Filter';
 import Form from './components/Form';
+import './style/App.scss';
 
 function App() {
   const [cardName, setCardName] = useState('');
