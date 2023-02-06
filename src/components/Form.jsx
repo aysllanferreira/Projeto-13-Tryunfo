@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../style/Form.scss';
 
 function Form({
   cardName,
