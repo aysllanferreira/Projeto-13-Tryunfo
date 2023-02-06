@@ -16,10 +16,13 @@ function Form({
   onSaveButtonClick,
 }) {
   return (
-    <form className="Form">
-      <label htmlFor="name">
+    <form className="flex flex-col w-[80%] mx-auto">
+      <label
+        htmlFor="name"
+        className="text-2xl"
+      >
         {' '}
-        Nome:
+        Name:
       </label>
       <input
         value={ cardName }
@@ -27,12 +30,17 @@ function Form({
         type="text"
         data-testid="name-input"
         id="name"
-        placeholder="Nome do personagem"
+        placeholder="Character's Name"
+        className="border border-gray-300 rounded-md shadow-sm focus:border-indigo-300
+          focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2 outline-orange-500"
       />
 
-      <label htmlFor="desc">
+      <label
+        className="text-2xl"
+        htmlFor="desc"
+      >
         {' '}
-        Descricao:
+        Description:
 
       </label>
       <textarea
@@ -42,11 +50,17 @@ function Form({
         cols="30"
         rows="10"
         id="desc"
-        placeholder="Descrição do personagem"
+        placeholder="Character's Description"
+        className="border border-gray-300 rounded-md shadow-sm focus:border-indigo-300
+          focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2 outline-orange-500
+          resize-none h-20"
       />
 
-      <label htmlFor="attr01">
-        Atributo 01:
+      <label
+        htmlFor="attr01"
+        className="text-2xl"
+      >
+        Power:
         {' '}
       </label>
       <input
@@ -54,15 +68,20 @@ function Form({
         onChange={ onInputChange }
         type="number"
         min="0"
-        max="90"
+        max="100"
         data-testid="attr1-input"
         id="attr01"
-        placeholder="Atributo 1"
+        placeholder="Attribute 1"
+        className="border border-gray-300 rounded-md shadow-sm focus:border-indigo-300
+          focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2 outline-orange-500"
       />
 
-      <label htmlFor="attr02">
+      <label
+        htmlFor="attr02"
+        className="text-2xl"
+      >
         {' '}
-        Atributo 02:
+        Speed:
 
       </label>
       <input
@@ -70,15 +89,20 @@ function Form({
         onChange={ onInputChange }
         type="number"
         min="0"
-        max="90"
+        max="100"
         data-testid="attr2-input"
         id="attr02"
-        placeholder="Atributo 2"
+        placeholder="Attribute 2"
+        className="border border-gray-300 rounded-md shadow-sm focus:border-indigo-300
+          focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2 outline-orange-500"
       />
 
-      <label htmlFor="attr03">
+      <label
+        htmlFor="attr03"
+        className="text-2xl"
+      >
         {' '}
-        Atributo 03:
+        Inteligence:
         {' '}
 
       </label>
@@ -87,13 +111,18 @@ function Form({
         onChange={ onInputChange }
         type="number"
         min="0"
-        max="90"
+        max="100"
         data-testid="attr3-input"
         id="attr03"
-        placeholder="Atributo 3"
+        placeholder="Attribute 3"
+        className="border border-gray-300 rounded-md shadow-sm focus:border-indigo-300
+          focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2 outline-orange-500"
       />
 
-      <label htmlFor="image">
+      <label
+        htmlFor="image"
+        className="text-2xl"
+      >
         {' '}
         Imagem:
 
@@ -104,12 +133,16 @@ function Form({
         type="text"
         data-testid="image-input"
         id="image"
-        placeholder="URL da imagem"
+        placeholder="Image URL"
+        className="border border-gray-300 rounded-md shadow-sm focus:border-indigo-300
+          focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2 outline-orange-500"
       />
 
-      <label htmlFor="raridade">
+      <label
+        htmlFor="raridade"
+      >
         {' '}
-        Raridade:
+        Rarity:
         {' '}
 
       </label>
@@ -118,20 +151,26 @@ function Form({
         onChange={ onInputChange }
         data-testid="rare-input"
         id="raridade"
+        className="border border-gray-300 rounded-md shadow-sm focus:border-indigo-300
+          focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2 outline-orange-500"
       >
-        <option value="normal">normal</option>
-        <option value="raro">raro</option>
-        <option value="muito raro">muito raro</option>
+        <option value="normal">Normal</option>
+        <option value="raro">Rare</option>
+        <option value="muito raro">Super rare</option>
       </select>
 
       {
         hasTrunfo ? (
-          <p>Você já tem um Super Trunfo em seu baralho</p>
+          <p>You already have a Super Trump in your deck</p>
         ) : (
           <div>
-            <label data-testid="trunfo-filter" htmlFor="cardTrunfo">
+            <label
+              data-testid="trunfo-filter"
+              htmlFor="cardTrunfo"
+              className="text-2xl text-center"
+            >
               {' '}
-              Super Trunfo:
+              Super Trump:
             </label>
             <input
               type="checkbox"
@@ -150,8 +189,10 @@ function Form({
         type="button"
         onClick={ onSaveButtonClick }
         data-testid="save-button"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4
+          rounded cursor-pointer mt-6"
       >
-        Salvar
+        Save
 
       </button>
 

@@ -40,12 +40,18 @@ function App() {
       setCardDescription(value);
       break;
     case 'attr01':
+      if (value > 100) return setCardAttr1(100);
+      if (value < 0) return setCardAttr1(0);
       setCardAttr1(value);
       break;
     case 'attr02':
+      if (value > 100) return setCardAttr2(100);
+      if (value < 0) return setCardAttr2(0);
       setCardAttr2(value);
       break;
     case 'attr03':
+      if (value > 100) return setCardAttr3(100);
+      if (value < 0) return setCardAttr3(0);
       setCardAttr3(value);
       break;
     case 'image':
@@ -114,9 +120,14 @@ function App() {
   }, [saveCard]);
 
   return (
-    <div className="App">
-      <h1>Tryunfo</h1>
-      <div className="Render">
+    <div className="container mx-auto">
+      <h1 className="text-4xl text-center mt-10 gap-4">
+        Super Cards Project
+      </h1>
+      <div
+        className="grid sd:grid-rows-2 md:grid-cols-2 md:w-[100%] w-[80%]
+      mx-auto gap-[100px]"
+      >
         <Form
           cardName={ cardName }
           cardDescription={ cardDescription }

@@ -4,7 +4,7 @@ import RenderCard from './RenderCard';
 
 export default function HandleRender({ deleteCard, filters }) {
   return (
-    <ul>
+    <ul className="flex flex-wrap justify-center gap-[25px]">
       {filters.map(({
         name,
         description,
