@@ -1,10 +1,4 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Projeto Tryunfo
+
+[Link do Projeto](https://solar-system-five-beta.vercel.app/](https://projeto-13-tryunfo.vercel.app/)
+![image](https://user-images.githubusercontent.com/64482847/218309069-0f78be90-4e46-4765-b768-f1c6b1dec900.png)
